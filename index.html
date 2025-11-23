@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Lea</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    body {
+      background: linear-gradient(135deg, #a678e2, #d6b0ff);
+    }
+    .face-card{
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+
+    #start-btn, #message-btn {
+      animation: pulse 2s infinite;
+      background-color: #7a39cc !important;
+      border: none;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    #gallery {
+      display: none;
+    }
+    .container{
+        display: flex;
+        align-items: center;
+    }
+    .card {
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      min-height: 150px;
+      width: 100%;
+      max-height: 600px;
+      object-fit: cover;
+    }
+    .fade-in {
+      animation: fadein 1s ease forwards;
+    }
+
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Sparkle animation */
+    .sparkle {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: sparkle 1s linear infinite;
+    }
+
+    @keyframes sparkle {
+      from { transform: scale(1); opacity: 1; }
+      to { transform: scale(0); opacity: 0; }
+    }
+    .swiper-slide{
+        min-height: 200px;
+        border-radius: 20px;
+        padding: 20px;
+    }
+    .swiper-slide img{
+        height: 300px !important;
+        object-fit: cover;
+    }
+
+  </style>
+</head>
+<body>
+<div class="face-card">
+  <audio id="bg-music" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6bf4a79899.mp3?filename=happy-birthday-110152.mp3" type="audio/mp3" />
+  </audio>
+
+  <div class="text-center" id="welcome">
+    <h1 class="text-white fw-bold mb-4">Happy Birthday, Lea! 🎉💜</h1>
+    <button id="start-btn" class="btn btn-lg btn-light px-5 py-3 text-white fw-bold">Click Me 💜</button>
+  </div>
+
+  <div class="container mt-5" id="gallery">
+    <h2 class="text-center text-white fw-bold mb-4">Lea's Face Cards 💜</h2>
+
+    <!-- Cards -->
+    <div class="row g-6 justify-content-center align-items-center">
+      <div class="col-6 col-md-4 fade-in">
+        <div class="card align-self-center"><img src="/images/lea.jpg"></div>
+      </div>
+      <div class="col-6 col-md-4 fade-in">
+        <div class="card"><img src="/images/lea1.jpg"></div>
+      </div>
+      <div class="col-8 mt-5 mt-md-0 col-md-4 fade-in">
+        <div class="card"><img src="/images/lea3.jpg"></div>
+      </div>
+    </div>
+    <h2 class="text-center mt-4 text-white fw-bold">Her Favorite Foods</h2>
+    <section class="py-10 container">
+    <!-- Swiper -->
+    <div class="swiper myFavoriteFoods">
+        <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide fade-in" >
+            <img src="/images/siomai.jpg" class="w-100 rounded" alt="Pizza">
+            <h4 class="mt-3 text-center fw-semibold">Simoai</h4>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide fade-in">
+            <img src="/images/isaw.jpg" class="w-100 rounded" alt="Pasta">
+            <h4 class="mt-3 text-center fw-semibold">Isaw</h4>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide fade-in">
+            <img src="/images/kalamares.jpg" class="w-100 rounded" alt="Ice Cream">
+            <h4 class="mt-3 text-center fw-semibold">Kalamares</h4>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="swiper-slide fade-in">
+            <img src="/images/adobo.jpg" class="w-100 rounded" alt="Fried Chicken">
+            <h4 class="mt-3 text-center fw-semibold">Adobo</h4>
+        </div>
+        <!-- Slide 4 -->
+        <div class="swiper-slide fade-in">
+            <img src="/images/sinigang.jpg" class="w-100 rounded" alt="Fried Chicken">
+            <h4 class="mt-3 text-center fw-semibold">Sinigang</h4>
+        </div>
+        <!-- Slide 4 -->
+        <div class="swiper-slide fade-in">
+            <img src="/images/cookies_and_cream.jpg" class="w-100 rounded" alt="Fried Chicken">
+            <h4 class="mt-3 text-center fw-semibold">Ice Cream</h4>
+        </div>
+
+        </div>
+
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    </section>
+    <div class="text-center mt-4 mb-5">
+      <button id="message-btn" class="btn btn-lg btn-light px-4 py-2 text-white fw-bold">Special Message 💌</button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="messageModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-4" style="border-radius: 20px; background:#f6e6ff;">
+        <h3 class="text-center text-purple fw-bold">💜 A Birthday Message for You 💜</h3>
+        <p class="mt-3 text-center">Hi Lea Fae Eusebio Icaonapo, a.k.a. Lovey,
+I hope you’re okay, even though I know deep down that you might not be.
+I’m sorry for not messaging for a few days — I had some things I needed to settle, and I’ve been really busy lately. I swear, I always want to talk to you.
+
+Another thing I want to say is that whenever you feel sad or you’re having a hard time coping with your difficulties, I’m always here for you, even in your lowest moments.
+
+Anyway, thank you for having me in your life. <br><br> <strong>Happy 20th Birthday Lovey:)</strong>💐💜</p>
+        <div class="text-center"><button class="btn btn-primary mt-2" data-bs-dismiss="modal">Close</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    const startBtn = document.getElementById('start-btn');
+    const welcome = document.getElementById('welcome');
+    const gallery = document.getElementById('gallery');
+    const music = document.getElementById('bg-music');
+    const messageBtn = document.getElementById('message-btn');
+
+    startBtn.addEventListener('click', () => {
+      welcome.style.display = 'none';
+      gallery.style.display = 'block';
+      gallery.classList.add('fade-in');
+
+      music.play();
+
+      confetti({ particleCount: 200, spread: 100 });
+    });
+
+    messageBtn.addEventListener('click', () => {
+      const modal = new bootstrap.Modal(document.getElementById('messageModal'));
+      modal.show();
+
+      confetti({ particleCount: 150, spread: 80, origin: { y: 0.8 } });
+    });
+
+    // Sparkles
+    document.addEventListener('mousemove', (e) => {
+      for (let i = 0; i < 3; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.classList.add('sparkle');
+        sparkle.style.left = e.pageX + 'px';
+        sparkle.style.top = e.pageY + 'px';
+        document.body.appendChild(sparkle);
+        setTimeout(() => sparkle.remove(), 800);
+      }
+
+    });
+    var swiper = new Swiper(".myFavoriteFoods", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+
+
+        autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        },
+
+        pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        },
+
+        navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+        },
+
+        breakpoints: {
+        640: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3,
+        }
+        }
+    });
+  </script>
+</body>
+</html>
